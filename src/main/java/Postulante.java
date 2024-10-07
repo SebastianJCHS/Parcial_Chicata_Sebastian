@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Postulante {
@@ -8,8 +9,10 @@ public class Postulante {
     private String direccion;
     private Date fnacimiento;
     private String clave;
+    private ArrayList<Postulacion> postulaciones;
+    private GradoEstudio gradoEstudio;
 
-    public Postulante(String DNI, String email, String nombres, String apellidos, String direccion, Date fnacimiento, String clave) {
+    public Postulante(String DNI, String email, String nombres, String apellidos, String direccion, Date fnacimiento, String clave){
         this.DNI = DNI;
         this.email = email;
         this.nombres = nombres;
@@ -17,6 +20,7 @@ public class Postulante {
         this.direccion = direccion;
         this.fnacimiento = fnacimiento;
         this.clave = clave;
+        this.postulaciones = new ArrayList<>();
     }
     
     public Postulante(){} // Constructor vacío 
@@ -78,17 +82,29 @@ public class Postulante {
     }
     
     public boolean asignarGradoEstudio(GradoEstudio gradoEstudio) {
-        
-        return true;
+        if (gradoEstudio != null) {
+            this.gradoEstudio = gradoEstudio;
+            return true;
+        }
+        return false;
     }
 
     public boolean postularOferta(Oferta oferta, String glosa) {
-        
-        return true;
+        if (oferta != null){
+            //Postulacion nuevaPostulacion = new Postulacion(new Date(), glosa);
+            //postulaciones.add(nuevaPostulacion);
+            return true;
+        }
+        return false;
     }
 
     public boolean anularPostulacion(Postulacion postulacion) {
-        
-        return true;
+        if (postulacion != null && postulaciones.contains(postulacion)) {
+            postulacion.anular();
+            return true;
+        }
+        return false;
     }
+    
+    
 }
