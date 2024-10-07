@@ -5,7 +5,15 @@ public class Cliente {
     private String telefono;
     private String clave;
     
-    public Cliente(){}
+    public Cliente(String RUC, String nombre, String email, String telefono, String clave){
+        this.RUC = RUC;
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+        this.clave = clave;
+    }
+    
+    public Cliente(){} // Constructor vacío
 
     public String getRUC() {
         return RUC;
@@ -39,7 +47,22 @@ public class Cliente {
         this.clave = clave;
     }
     
-    public boolean agregarOferta(){
+    public boolean agregarOferta(Oferta oferta) {
+        
         return true;
+    }
+
+    public boolean eliminarOferta(Oferta oferta) {
+        
+        return true;
+    }
+
+    public Oferta[] getOfertas() {
+        
+        return null;
+    }
+
+    public void registrarContacto(String DNI, String nombres, String apellidos, String puesto) {
+       
     }
 }
