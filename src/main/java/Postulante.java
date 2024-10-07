@@ -91,8 +91,8 @@ public class Postulante {
 
     public boolean postularOferta(Oferta oferta, String glosa) {
         if (oferta != null){
-            //Postulacion nuevaPostulacion = new Postulacion(new Date(), glosa);
-            //postulaciones.add(nuevaPostulacion);
+            Postulacion nuevaPostulacion = new Postulacion(new Date(), glosa);
+            postulaciones.add(nuevaPostulacion);
             return true;
         }
         return false;
@@ -104,7 +104,9 @@ public class Postulante {
             return true;
         }
         return false;
+    }    
+    
+    public Postulacion[] getPostulaciones() {
+        return postulaciones.toArray(new Postulacion[0]);
     }
-    
-    
 }

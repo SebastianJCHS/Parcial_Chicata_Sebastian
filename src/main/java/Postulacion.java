@@ -4,10 +4,12 @@ public class Postulacion {
     private Date fecha;
     private boolean anulado;
     private Date fechaAnulacion;
+    private String glosa;
 
-    public Postulacion(Date fecha) {
+    public Postulacion(Date fecha, String glosa) {
         this.fecha = fecha;
         this.anulado = false;
+        this.glosa = glosa;
     }
     
     public Postulacion(){} //Constructor vacío
@@ -31,13 +33,13 @@ public class Postulacion {
     public Date getFechaAnulacion() {
         return fechaAnulacion;
     }
-
+    
     public void setFechaAnulacion(Date fechaAnulacion) {
         this.fechaAnulacion = fechaAnulacion;
     }
     
     public void anular() {
         this.anulado = true;
-        this.fechaAnulacion = new Date(); // Anulando la fecha actual
+        this.fechaAnulacion = new Date(); 
     }
 }
